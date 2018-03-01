@@ -59,5 +59,18 @@ namespace HairSalon.Tests
 
             CollectionAssert.AreEqual(testList, result);
         }
+        [TestMethod]
+       public void Find_FindsClientsInDatabase_Client()
+       {
+           //Arrange
+           Client testClient = new Client("Laura", "email@email.com");
+           testClient.Save();
+
+           //Act
+           Client foundClient = Client.Find(testClient.GetId());
+
+           //Assert
+           Assert.AreEqual(testClient, foundClient);
+       }
    }
  }
