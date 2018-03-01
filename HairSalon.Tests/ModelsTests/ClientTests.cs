@@ -37,5 +37,16 @@ namespace HairSalon.Tests
             //Assert
             Assert.AreEqual(firstClient, secondClient);
         }
+        [TestMethod]
+        public void GetName_ReturnName_String()
+        {
+            string name= "Laura";
+            string email = "email@email.com";
+            Client newClient = new Client(name, email);
+
+            string result = newClient.GetName();
+
+            Assert.AreEqual(name, result);
+        }
    }
  }
