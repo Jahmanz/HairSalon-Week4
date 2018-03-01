@@ -9624,11 +9624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raide\\desktop\\HairSalon\\HairSalon\\HairSalon.csproj",
+      "projectUniqueName": "C:\\Users\\raide\\desktop\\hairsalon\\HairSalon\\HairSalon.csproj",
       "projectName": "HairSalon",
-      "projectPath": "C:\\Users\\raide\\desktop\\HairSalon\\HairSalon\\HairSalon.csproj",
+      "projectPath": "C:\\Users\\raide\\desktop\\hairsalon\\HairSalon\\HairSalon.csproj",
       "packagesPath": "C:\\Users\\raide\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raide\\desktop\\HairSalon\\HairSalon\\obj\\",
+      "outputPath": "C:\\Users\\raide\\desktop\\hairsalon\\HairSalon\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raide\\AppData\\Roaming\\NuGet\\NuGet.Config"

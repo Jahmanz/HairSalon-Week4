@@ -156,7 +156,8 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT clients.* FROM stylists JOIN stylists_clients ON (stylists.id = stylists_clients.client_id) JOIN clients ON (stylists_clients.client_id = clients.id) WHERE stylists.id = @StylistId;";
+      cmd.CommandText =       cmd.CommandText = @"SELECT clients.* FROM stylists JOIN stylists_clients ON (stylists.id = stylists_clients.stylist_id) JOIN clients ON (stylists_clients.client_id = clients.id) WHERE stylists.id = @StylistId;";
+
 
       MySqlParameter clientIdParameter = new MySqlParameter();
       clientIdParameter.ParameterName = "@StylistId";
@@ -186,8 +187,8 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE stylists SET name = @newName WHERE id = @searchId
-                          UPDATE stylists SET specialty = @newSpecialty WHERE id = @searchId;";
+      cmd.CommandText = @"UPDATE stylists SET name = @newName, specialty = @newSpecialty WHERE id = @searchId;";
+
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -205,7 +206,8 @@ namespace HairSalon.Models
       cmd.Parameters.Add(specialty);
 
       cmd.ExecuteNonQuery();
-      _name = newSpecialty;
+      _name = newName;
+      _specialty = newSpecialty;
 
       conn.Close();
       if (conn != null)

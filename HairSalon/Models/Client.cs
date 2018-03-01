@@ -152,12 +152,12 @@ namespace HairSalon.Models
       return foundClient;
     }
 
-    public void Edit(string newName)
+    public void Edit(string newName, string newEmail)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"UPDATE clients SET name = @newName WHERE id = @searchId;";
+      cmd.CommandText = @"UPDATE clients SET name = @newName, email = @newEmail WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -169,13 +169,14 @@ namespace HairSalon.Models
       name.Value = newName;
       cmd.Parameters.Add(name);
 
-      // MySqlParameter email = new MySqlParameter();
-      // email.ParameterName = "@newEmail";
-      // email.Value = newEmail;
-      // cmd.Parameters.Add(email);
+      MySqlParameter email = new MySqlParameter();
+      email.ParameterName = "@newEmail";
+      email.Value = newEmail;
+      cmd.Parameters.Add(email);
 
       cmd.ExecuteNonQuery();
       _name = newName;
+      _email = newEmail;
 
       conn.Close();
       if (conn != null)
@@ -217,7 +218,9 @@ namespace HairSalon.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT stylists.* FROM clients";
+      cmd.CommandText = @"SELECT stylists.* FROM clients
+      JOIN stylists_clients ON (clients.id = stylists_clients.client_id)
+      JOIN stylists ON (stylists_clients.stylist_id = stylists.id) WHERE clients.id = @ClientId;";
 
 
       MySqlParameter clientIdParameter = new MySqlParameter();

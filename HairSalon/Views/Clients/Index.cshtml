@@ -1,0 +1,20 @@
+@{
+  Layout="_Layout";
+}
+
+
+<center><h1>Clients:</h1>
+@if (Model.Count != 0)
+{
+  <ul>
+    @foreach (var client in Model)
+    {
+      <li><a href='/clients/@client.GetId()'>@client.GetName() || @client.GetEmail()</a>
+      <a href="/clients/@client.GetId()/update">Edit</a> ||
+      <a method="post" href="/clients/@client.GetId()/delete">Delete</a></li>
+     }
+   </ul>
+ }
+<br>
+<h4><a href="/clients/new">Add new client</a></h4>
+<h4><a href="/">Return Home</a></h4></center>
