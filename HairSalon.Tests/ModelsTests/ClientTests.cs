@@ -19,13 +19,23 @@ namespace HairSalon.Tests
         }
 
        [TestMethod]
-       public void GetAll_ClientsEmptyAtFirst_0()
+       public void GetAll_EmptyClients_0()
        {
          //Arrange, Act
          int result = Client.GetAll().Count;
 
          //Assert
-         Assert.AreEqual(4, result);
+         Assert.AreEqual(0, result);
        }
+       [TestMethod]
+        public void Equals_ClientsAreEqual_Client()
+        {
+            //Arrange, Act
+            Client firstClient = new Client("Laura", "email@email.com");
+            Client secondClient = new Client("Laura", "email@email.com");
+
+            //Assert
+            Assert.AreEqual(firstClient, secondClient);
+        }
    }
  }
