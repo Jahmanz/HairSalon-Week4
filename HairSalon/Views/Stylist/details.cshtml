@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+<div class= "container">
+<h3>@Model["stylist"].GetName()`s Client List:</h3>
+<hr>
+<ul>
+@foreach(var client in @Model["clients"])
+{
+  <li>@client.GetName() | <a href="/clients/@client.GetId()/update">Edit</a> | <a method="post" href="/clients/@client.GetId()/delete">Delete</a></li>
+}
+</ul>
+<p><a href='/'>Home</a> | <a href='/stylists/@Model["stylist"].GetId()/clients/new'>Add Client</a> | <a href='/stylists'>Stylist List</a></p>
+
+<form action="/clients/delete" method="post">
+</div>
