@@ -3,11 +3,11 @@
 }
 @using HairSalon.Models;
 
-<h3>Course: @Model["stylist"].GetName()</h3>
+<h3>stylist: @Model["stylist"].GetName()</h3>
 <hr>
 @if (@Model["stylistClients"].Count != 0)
 {
-  <h4> The following clients are currently enrolled in this stylist:</h4>
+  <h4> The following clients are currently with this stylist:</h4>
 
   <ul>
   @foreach (var client in @Model["stylistClients"])

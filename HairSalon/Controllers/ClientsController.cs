@@ -47,12 +47,12 @@ namespace HairSalon
       return View("ClientDetails",model);
     }
 
-    [HttpPost("/clients/{clientId}/courses/new")]
+    [HttpPost("/clients/{clientId}/stylists/new")]
     public ActionResult AddStylist(int clientId)
     {
       Client client = Client.Find(clientId);
-      Stylist course = Stylist.Find(Int32.Parse(Request.Form["course-id"]));
-      client.AddStylist(course);
+      Stylist stylist = Stylist.Find(Int32.Parse(Request.Form["stylist-id"]));
+      client.AddStylist(stylist);
 
       return View("Success");
     }
@@ -72,7 +72,7 @@ namespace HairSalon
       Client thisClient = Client.Find(id);
 
       thisClient.UpdateName(newName);
-      return RedirectToAction("ClientIndex");
+      return RedirectToAction("ClientDetails");
     }
 
     [HttpGet("/clients/{clientId}/delete")]

@@ -70,19 +70,17 @@ namespace HairSalon.Tests
       Assert.AreEqual(testClient, foundClient);
     }
     [TestMethod]
-    public void Edit_UpdatesClientInDatabase_String()
+    public void Update_UpdateClientInDatabase_String()
     {
-      string firstName = "Laura";
-      string firstEmail = "email@email.com";
-      Client testClient = new Client(firstName, firstEmail);
+      Client testClient = new Client("Lauri","email@email.com");
       testClient.Save();
-      string secondName = "jahmanz";
-      string secondEmail = "hello@email.com";
+      string updateName = "Laura";
 
-      testClient.Edit(secondName, secondEmail);
+      testClient.UpdateName(updateName);
+
       string result = Client.Find(testClient.GetId()).GetName();
 
-      Assert.AreEqual(secondName, result);
+      Assert.AreEqual(updateName, result);
     }
 
   }

@@ -2,11 +2,11 @@
   Layout="_Layout";
 }
     <center><h1>Edit Client: @Model.GetName()</h1>
-    <form action="/items/@Model.GetId()/update" method="post">
+    <form action="/clients/@Model.GetId()/update" method="post">
         <label for="name">Name:</label>
         <input type="text" name="newname" value="@Model.GetName()">
-        <h1>Edit Item: @Model.GetEmail()</h1>
-        <form action="/items/@Model.GetId()/update" method="post">
+        <h1>Edit client: @Model.GetEmail()</h1>
+        <form action="/clients/@Model.GetId()/update" method="post">
             <label for="email">Email:</label>
             <input type="text" name="newemail" value="@Model.GetEmail()">
         <button type="submit">Edit</button>
