@@ -5,8 +5,8 @@
 @using HairSalon.Models;
 
       <center><<h1>Florida's Hair Salon</h1>
-      <h2>Client: @Model["clients"].GetName()</h2>
-        <h2>Email: @Model["clients"].GetEmail()</h2>
+      <h2>Client: @Model["client"].GetName()</h2>
+        <h2>Email: @Model["client"].GetEmail()</h2>
         <hr/>
         @if (@Model["clientStylists"].Count != 0)
         {

@@ -7,3 +7,12 @@ C:\Users\raide\desktop\HairSalon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.dll
 C:\Users\raide\desktop\HairSalon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.pdb
 C:\Users\raide\desktop\HairSalon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.dll
 C:\Users\raide\desktop\HairSalon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.pdb
+C:\Users\raide\desktop\hair-salon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.deps.json
+C:\Users\raide\desktop\hair-salon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.runtimeconfig.json
+C:\Users\raide\desktop\hair-salon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.runtimeconfig.dev.json
+C:\Users\raide\desktop\hair-salon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.dll
+C:\Users\raide\desktop\hair-salon\hairsalon\bin\Debug\netcoreapp1.1\HairSalon.pdb
+C:\Users\raide\desktop\hair-salon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.csproj.CoreCompileInputs.cache
+C:\Users\raide\desktop\hair-salon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.AssemblyInfo.cs
+C:\Users\raide\desktop\hair-salon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.dll
+C:\Users\raide\desktop\hair-salon\hairsalon\obj\Debug\netcoreapp1.1\HairSalon.pdb
