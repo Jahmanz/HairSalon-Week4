@@ -76,10 +76,10 @@ namespace HairSalon.Models
             {
                 int clientId = rdr.GetInt32(0);
                 string clientName = rdr.GetString(1);
-                string clientEmal = rdr.GetString(2);
-                int clientStylist = rdr.GetInt32(3);
+                string clientEmail = rdr.GetString(2);
+                // int clientStylist = rdr.GetInt32(3);
 
-                Client newClient = new Client(clientName, clientEmal, clientStylist, clientId);
+                Client newClient = new Client(clientName, clientEmail, clientId);
                 allClients.Add(newClient);
             }
             conn.Close();
