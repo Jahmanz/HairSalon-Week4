@@ -32,7 +32,7 @@ namespace HairSalon
     }
 
     [HttpGet("/clients/{id}")]
-    public ActionResult ClientDetail(int id)
+    public ActionResult ClientDetails(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Client selectedClient = Client.Find(id);
@@ -44,7 +44,7 @@ namespace HairSalon
       model.Add("clientStylists", clientStylists);
       model.Add("allStylists", allStylists);
 
-      return View("ClientDetails",model);
+      return View(model);
     }
 
     [HttpPost("/clients/{clientId}/stylists/new")]
@@ -54,7 +54,7 @@ namespace HairSalon
       Stylist stylist = Stylist.Find(Int32.Parse(Request.Form["stylist-id"]));
       client.AddStylist(stylist);
 
-      return View("Success");
+      return RedirectToAction("Success", "Home");
     }
 
     [HttpGet("/clients/{id}/update")]

@@ -21,13 +21,28 @@ namespace HairSalon
     }
 
     [HttpPost("/stylists")]
-    public ActionResult StylistCreate()
-    {
-      Stylist newStylist = new Stylist(Request.Form["stylist-name"]);
-      newStylist.Save();
-
-      return RedirectToAction("Success", "Home");
-    }
+        public ActionResult StylistCreate()
+        {
+            string name = Request.Form["stylist-name"];
+            string specialty = Request.Form["stylist-specialty"];
+            Stylist myStylist = new Stylist(name);
+            myStylist.Save();
+            Console.WriteLine(myStylist.GetId());
+            // Specialty newSpecialty = new Specialty(specialty);
+            // newSpecialty.Save();
+            // newSpecialty.AddStylist(myStylist);
+            // myStylist.AddSpecialty(newSpecialty);
+            return View("Info", myStylist);
+        }
+    //
+    // [HttpPost("/stylists")]
+    // public ActionResult StylistCreate()
+    // {
+    //   Stylist newStylist = new Stylist(Request.Form["stylist-name"],Request.Form["stylist-specialty"]);
+    //   newStylist.Save();
+    //
+    //   return RedirectToAction("Success", "Home");
+    // }
 
     [HttpGet("/stylists/{id}")]
     public ActionResult StylistDetail(int id)

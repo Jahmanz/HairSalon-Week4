@@ -10721,11 +10721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raide\\desktop\\hairsalon\\hairsalon.tests\\HairSalon.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\raide\\desktop\\hair-salon\\hairsalon.tests\\HairSalon.Tests.csproj",
       "projectName": "HairSalon.Tests",
-      "projectPath": "C:\\Users\\raide\\desktop\\hairsalon\\hairsalon.tests\\HairSalon.Tests.csproj",
+      "projectPath": "C:\\Users\\raide\\desktop\\hair-salon\\hairsalon.tests\\HairSalon.Tests.csproj",
       "packagesPath": "C:\\Users\\raide\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raide\\desktop\\hairsalon\\hairsalon.tests\\obj\\",
+      "outputPath": "C:\\Users\\raide\\desktop\\hair-salon\\hairsalon.tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raide\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -10739,8 +10739,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "C:\\Users\\raide\\desktop\\hairsalon\\HairSalon\\HairSalon.csproj": {
-              "projectPath": "C:\\Users\\raide\\desktop\\hairsalon\\HairSalon\\HairSalon.csproj"
+            "C:\\Users\\raide\\desktop\\hair-salon\\HairSalon\\HairSalon.csproj": {
+              "projectPath": "C:\\Users\\raide\\desktop\\hair-salon\\HairSalon\\HairSalon.csproj"
             }
           }
         }

@@ -1,43 +1,22 @@
 @{
   Layout = "_Layout";
 }
-@using HairSalon.Models;
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>SPECIALTIES</h1>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <h3>Specialty</h3>
-    </div>
-    <div class="col-md-6">
-      <h3>Stylists</h3>
-    </div>
-  </div>
-  <hr>
-  @foreach (var specialty in Model)
+  @if (Model.Count != 0)
   {
-    <div class="row">
-    <div class="col-md-6">
-    <h3>@specialty.GetSpecialty()</h3>
-    </div>
     <ul>
-    @foreach (Stylist stylist in @Model["clientStylists"])
-    {
-      <li>@stylist.GetName()<a href="/stylists/@stylist.GetId()/update"> Edit </a> | <a href="/stylists/@stylist.GetId()/delete"> Delete </a></li>
-    }
+      @foreach (var specialty in Model)
+      {
+        <li><a href= "/specialties/@specialty.GetId()">  @specialty.GetSpecialty()</a> ||
+        <a href="/specialties/@specialty.GetId()/update"> Edit</a> || <a href="/specialties/@specialty.GetId()/delete"> Delete</a></li>
+      }
     </ul>
-
-    </div>
   }
+  <br>
   <hr>
-  <div class="row">
-    <div class="col-md-12">
-      <a href="/"><button type="button" class="btn">Back to Homepage</button></a>
-    </div>
-  </div>
+  <h4><a href="/specialties/new"> Add New specialty </a></h4>
+  <hr>
+  <h4><a href="/"> Home </a></h4>
+  <hr>
 </div>
