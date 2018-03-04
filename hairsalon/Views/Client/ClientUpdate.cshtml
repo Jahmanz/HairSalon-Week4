@@ -1,0 +1,14 @@
+@{
+  Layout="_Layout";
+}
+    <center><h1>Edit Client: @Model.GetName()</h1>
+    <form action="/clients/@Model.GetId()/update" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="newname" value="@Model.GetName()">
+        <h1>Edit client: @Model.GetEmail()</h1>
+        <form action="/clients/@Model.GetId()/update" method="post">
+            <label for="email">Email:</label>
+            <input type="text" name="newemail" value="@Model.GetEmail()">
+        <button type="submit">Edit</button>
+    </form>
+    <h4><a href="/">Return home</a></h4></center>
