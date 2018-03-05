@@ -180,12 +180,9 @@ namespace HairSalon.Models
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"SELECT clients.* FROM stylists
-
-                JOIN specialty ON (stylists.id = specialty.stylist_id)
-
-                JOIN clients ON (specialty.client_id = clients.id)
-
-                WHERE stylists.id = @StylistId;";
+      JOIN client_stylist ON (stylists.id = client_stylist.stylist_id)
+      JOIN clients ON (client_stylist.client_id = clients.id)
+      WHERE stylists.id = @StylistId;";
 
       MySqlParameter stylist_id = new MySqlParameter();
       stylist_id.ParameterName = "@StylistId";

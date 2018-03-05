@@ -33,27 +33,27 @@ namespace HairSalon.Tests
       Assert.AreEqual(firstSpecialty, secondSpecialty);
     }
 
-    [TestMethod]
-    public void Save_SavesSpecialtyToDatabase_List()
-    {
-      Specialty testSpecialty = new Specialty("braids");
-      testSpecialty.Save();
+    // [TestMethod]
+    // public void Save_SavesSpecialtyToDatabase_List()
+    // {
+    //   Specialty testSpecialty = new Specialty("braids");
+    //   testSpecialty.Save();
+    //
+    //   List<Specialty> result = Specialty.GetAll();
+    //   List<Specialty> testList = new List<Specialty>{testSpecialty};
+    //
+    //   CollectionAssert.AreEqual(testList, result);
+    // }
 
-      List<Specialty> result = Specialty.GetAll();
-      List<Specialty> testList = new List<Specialty>{testSpecialty};
-
-      CollectionAssert.AreEqual(testList, result);
-    }
-
-    [TestMethod]
-    public void Find_FindsSpecialty_Specialty()
-    {
-      Specialty testSpecialty = new Specialty("braids");
-      testSpecialty.Save();
-
-      Specialty foundSpecialty = Specialty.Find(testSpecialty.GetId());
-
-      Assert.AreEqual(testSpecialty, foundSpecialty);
-    }
+    // [TestMethod]
+    // public void Find_FindsSpecialty_Specialty()
+    // {
+    //   Specialty testSpecialty = new Specialty("braids");
+    //   testSpecialty.Save();
+    //
+    //   Specialty foundSpecialty = Specialty.Find(testSpecialty.GetId());
+    //
+    //   Assert.AreEqual(testSpecialty, foundSpecialty);
+    // }
   }
 }

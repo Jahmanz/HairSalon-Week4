@@ -58,13 +58,11 @@ namespace HairSalon.Models
     public static List<Specialty> GetAll()
     {
       List<Specialty> allSpecialties = new List<Specialty>();
-
       MySqlConnection conn = DB.Connection();
       conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      var cmd = conn.CreateCommand();
       cmd.CommandText = @"SELECT * FROM specialty;";
-      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while (rdr.Read())
       {
         int specialtyId = rdr.GetInt32(0);
@@ -102,7 +100,7 @@ namespace HairSalon.Models
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      var cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"SELECT * FROM specialty WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
@@ -186,7 +184,7 @@ namespace HairSalon.Models
       List<Stylist> newStylistList = new List<Stylist>{};
       MySqlConnection conn = DB.Connection();
       conn.Open();
-      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      var cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = @"SELECT stylists.* FROM specialty
       JOIN stylist_specialty ON (specialty.id = stylist_specialty.specialty_id)
 
@@ -201,8 +199,8 @@ namespace HairSalon.Models
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while (rdr.Read())
       {
-        string name = rdr.GetString(1);
-        Stylist newStylist = new Stylist(name);
+        string specialty = rdr.GetString(1);
+        Stylist newStylist = new Stylist(specialty);
         newStylistList.Add(newStylist);
       }
       conn.Close();
